@@ -37,7 +37,7 @@ class PostDetailsComponent extends StatelessWidget {
                 child: Text(
                   post.body.replaceAll('\n', ' ').capitalize(),
                   textAlign: TextAlign.justify,
-                  style: GoogleFonts.quicksandTextTheme().titleLarge,
+                  style: GoogleFonts.quicksandTextTheme().titleLarge!.copyWith(fontWeight:FontWeight.w400),
                 ),
               )
             ],

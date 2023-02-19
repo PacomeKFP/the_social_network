@@ -18,7 +18,7 @@ class Scaffolder extends StatelessWidget {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          padding: EdgeInsets.symmetric(horizontal: hPadding, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: hPadding),
           child: SingleChildScrollView(
             child: content,
           ),
