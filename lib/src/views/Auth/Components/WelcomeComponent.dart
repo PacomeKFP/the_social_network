@@ -8,13 +8,14 @@ class WelcomeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    
+
     return Padding(
       padding:
           EdgeInsets.only(bottom: size.height * 0.10, top: size.height * 0.15),
       child: ListTile(
         title: Text(
           'Bienvenue !',
+          textAlign: TextAlign.center,
           style: Theme.of(context)
               .textTheme
               .headlineLarge!
@@ -22,9 +23,10 @@ class WelcomeComponent extends StatelessWidget {
         ),
         subtitle: Text(
             'Veuillez entrer votre mot de passe pour vous connecter.',
+            textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
-                .headlineLarge!
+                .titleMedium!
                 .copyWith(color: Colors.black)),
       ),
     );

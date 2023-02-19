@@ -20,14 +20,8 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-          width: size.width,
-          height: size.height,
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: SingleChildScrollView(
-            child: Column(
+    return  Scaffolder(
+            content: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const WelcomeComponent(),
@@ -57,10 +51,8 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                             InkWell(
                               onTap: () {
                                 //Future.delayed va permettre de simuler un charement
-                                setState(() {
-                                  _isLoading = true;
-                                });
-                                Timer(const Duration(seconds: 3), () {
+                                // setState(() => _isLoading = true);
+                                // Timer(const Duration(seconds: 3), () {
                                   if (_formKey.currentState!.validate()) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                         const SnackBar(
@@ -73,8 +65,8 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                                             content: Text(
                                                 'Mot de passe invalide, veuillez reéssayer')));
                                   }
-                                  setState(() => _isLoading = false);
-                                });
+                                  // setState(() => _isLoading = false);
+                                // });
                               },
                               child: Container(
                                 padding: const EdgeInsets.symmetric(
@@ -98,9 +90,6 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                         ))
               ],
             ),
-          ),
-        ),
-      ),
     );
   }
 }

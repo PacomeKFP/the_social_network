@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:the_social_network/src/models/models.dart';
 import 'package:the_social_network/src/views/Auth/auth.view.dart';
 import 'package:the_social_network/src/views/PostDetails/post_details.view.dart';
 import 'package:the_social_network/src/views/PostList/posts_list.view.dart';

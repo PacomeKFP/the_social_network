@@ -30,9 +30,14 @@ class _$AppRouter extends RootStackRouter {
       );
     },
     PostDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<PostDetailsRouteArgs>();
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const PostDetailsPage(),
+        child: PostDetailsPage(
+          key: args.key,
+          color: args.color,
+          post: args.post,
+        ),
       );
     },
   };
@@ -80,12 +85,39 @@ class PostsListRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [PostDetailsPage]
-class PostDetailsRoute extends PageRouteInfo<void> {
-  const PostDetailsRoute()
-      : super(
+class PostDetailsRoute extends PageRouteInfo<PostDetailsRouteArgs> {
+  PostDetailsRoute({
+    Key? key,
+    required Color color,
+    required Post post,
+  }) : super(
           PostDetailsRoute.name,
           path: '/post/:id',
+          args: PostDetailsRouteArgs(
+            key: key,
+            color: color,
+            post: post,
+          ),
         );
 
   static const String name = 'PostDetailsRoute';
+}
+
+class PostDetailsRouteArgs {
+  const PostDetailsRouteArgs({
+    this.key,
+    required this.color,
+    required this.post,
+  });
+
+  final Key? key;
+
+  final Color color;
+
+  final Post post;
+
+  @override
+  String toString() {
+    return 'PostDetailsRouteArgs{key: $key, color: $color, post: $post}';
+  }
 }
